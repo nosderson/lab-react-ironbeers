@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { VscHome } from "react-icons/vsc";
 import { useLocation } from 'react-router-dom';
 
-function NavBar() {
+function Barra() {
 
   const location = useLocation();
   if (location.pathname === '/') {
@@ -12,14 +12,14 @@ function NavBar() {
 
   return (
       
-        <navbar className="container-xxl navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <nav className="container-xxl navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
           <div className="container">
-            <Link to="/" class="navbar-brand"><VscHome /></Link>
+            <Link to="/" className="navbar-brand"><VscHome /></Link>
           </div>
-        </navbar>
+        </nav>
      
   );
 }
 
 
-export default NavBar;
+export default Barra;

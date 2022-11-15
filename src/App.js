@@ -5,13 +5,13 @@ import NewBeersPage from "./pages/NewBeersPage";
 import RandomBeersPage from "./pages/RandomBeerPage";
 import HomePage from "./pages/HomePage";
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./componets/NavBar";
+import Barra from "./components/Barra";
 
 function App() {
  
   return (
     <div className="App">
-      <NavBar/>
+      <Barra/>
       <div className="container py-5">
       <Routes>
         <Route
