@@ -1,10 +1,6 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { VscHome } from "react-icons/vsc";
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import { useLocation} from 'react-router-dom';
-
-
+import { useLocation } from 'react-router-dom';
 
 function NavBar() {
 
@@ -12,18 +8,16 @@ function NavBar() {
   if (location.pathname === '/') {
     return (<div></div>);
   }
-  
+
 
   return (
-    <Container>
-      <Link className="navbar-brand" to="/">
-      <Navbar expand="lg" variant="dark" bg="primary" fixed="top">
-        <Container>
-          <Navbar.Brand href="#"><VscHome/></Navbar.Brand>
-        </Container>
-      </Navbar>
-      </Link>
-    </Container>
+      
+        <navbar className="container-xxl navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+          <div className="container">
+            <Link to="/" class="navbar-brand"><VscHome /></Link>
+          </div>
+        </navbar>
+     
   );
 }
 

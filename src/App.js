@@ -6,14 +6,13 @@ import RandomBeersPage from "./pages/RandomBeerPage";
 import HomePage from "./pages/HomePage";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./componets/NavBar";
-import Container from 'react-bootstrap/Container';
 
 function App() {
  
   return (
     <div className="App">
       <NavBar/>
-      <Container>
+      <div className="container py-5">
       <Routes>
         <Route
           path="/"
@@ -40,7 +39,7 @@ function App() {
           element={<NewBeersPage />}
         />
       </Routes>
-      </Container>
+      </div>
     </div>
   );
 }

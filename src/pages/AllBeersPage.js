@@ -15,25 +15,28 @@ function AllBeersPage() {
   }, []);
   // console.log(beers)
   return (
-    <div>
-      {
+    <div className="col-10">
+    <div className="list-group">
+        {
         beers.map((beer) => {
           return (
-         
-            <div key={beer._id}>
-              <Link to={`/beers/${beer._id}`}>
 
-                <img src={beer.image_url} alt={beer.name} />
-                <h3>{beer.name}</h3>
-                <p>{beer.tagline}</p>
+
+            <Link to={`/beers/${beer._id}`} key={beer._id} className="list-group-item list-group-item-action">
+              <div className="d-flex w-100 justify-content-between">
+                <img src={beer.image_url} alt={beer.name} style={{maxWidth: "10%"}}/>
+                <h5 className="mb-1">{beer.name}</h5>
+                <h5>{beer.tagline}</h5>
                 <small>Create by {beer.contributed_by}</small>
-
-              </Link>
-            </div>
-          )
-        })
+              </div>
+              <p className="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <small>Donec id elit non mi porta.</small>
+            </Link>
+  )
+})
       }
-    </div>
+    </div >
+    </div >
   );
 }
 
