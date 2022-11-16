@@ -6,9 +6,8 @@ function Barra() {
 
   const location = useLocation();
   if (location.pathname === '/') {
-    return (<div></div>);
+    return false;
   }
-
 
   return (
       

@@ -9,11 +9,11 @@ function BeersDetailsPage(id) {
     async function fetchBeer() {
 
        if (id.id==="random"){
-        const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/random`);
+        const response = await axios.get(`https://ironbeer-api.fly.dev/random`);
        setBeers(response.data);     
        }
        else {
-        const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/${beerId}`);
+        const response = await axios.get(`https://ironbeer-api.fly.dev/${beerId}`);
        setBeers(response.data);    
 
        }
@@ -25,7 +25,7 @@ function BeersDetailsPage(id) {
   return (
     <div>
 
-      <img src={beers.image_url} alt={beers.name} />
+      <img src={beers.image} alt={beers.name} />
       <h2>{beers.name}</h2>
       <p>{beers.tagline}</p>
       <p>{beers.first_brewed}</p>
