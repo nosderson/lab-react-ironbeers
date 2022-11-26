@@ -21,52 +21,11 @@ function AllBeersPage() {
     setReload(!reload)
   }
 
-  function geraPalavras(word) {
-
-    try {
-      const matriz = new Array(2 ** (word.length - 1))
-      for (let i = 0; i < 2 ** (word.length - 1); i++)
-        matriz[i] = new Array(word.length - 1)
-
-        for (let i = 0; i < matriz.length; i++)
-        for (let j = 0; j < matriz[0].length; j++)
-          matriz[i][j] = ""
-
-          console.log(matriz)
-      
-        for (let i = 0; i < 2 ** (word.length - 1); i = i + 2)
-        for (let j = 0; j < word.length; j++) {
-                 matriz[i][j] += word[j].toLowerCase();
-            matriz[i + 1][j] += word[j].toUpperCase();
-        }
-
-  
-      return matriz;
-
-    }
-    catch (e) {
-      const matriz = new Array(1);
-      matriz[0] = new Array(1)
-      matriz[0][0] = word.toLowerCase()
-      matriz[0][1] = word.toUpperCase()
-      return matriz;
-
-    };
-
-  }
-
   async function handleChange(e) {
     const searchs = [];
     setQuery(e.target.value)
     let search = e.target.value
     const response = await axios.get(`https://ironbeer-api.fly.dev/search?q=${search}`)
-    const auxSearchs = geraPalavras(search);
-
-    if (auxSearchs.length > 1)
-      for (let i = 0; i < auxSearchs.length; i++)
-        searchs[i] = auxSearchs[i].join("")
-
-    console.log(searchs);
 
     setBeers(response.data)
     handleReload()
